@@ -5,8 +5,10 @@ import { db } from "@/firebase/admin";
 import { getRandomInterviewCover } from "@/lib/utils";
 
 // Add environment variable configuration
-if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-  throw new Error("GOOGLE_API_KEY is not defined in environment variables");
+const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("GOOGLE_GENERATIVE_AI_API_KEY is not defined in environment variables");
 }
 
 export async function POST(request: Request) {
@@ -16,7 +18,7 @@ export async function POST(request: Request) {
     const { text: questions } = await generateText({
       model: google(
         "gemini-2.0-flash-001",
-        process.env.GOOGLE_GENERATIVE_AI_API_KEY
+        apiKey
       ),
       prompt: `Prepare questions for a job interview.
         The job role is ${role}.
