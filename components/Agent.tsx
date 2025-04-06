@@ -9,6 +9,8 @@ enum CallStatus {
   FINISHED = "FINISHED",
 }
 
+// Commenting out the Agent component for deployment
+/*
 const Agent = ({ username }: AgentProps) => {
   const callStatus = CallStatus.FINISHED;
   const messages = [
@@ -85,3 +87,8 @@ const Agent = ({ username }: AgentProps) => {
 };
 
 export default Agent;
+*/
+
+export default function Placeholder() {
+  return <div>Agent component is currently disabled for deployment.</div>;
+}
