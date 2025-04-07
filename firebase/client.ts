@@ -4,14 +4,16 @@ import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyCK-uKujPuYXL1hmV2r7nTHmYJfyWDresU",
+  authDomain: "interviewprep-939b4.firebaseapp.com",
+  projectId: "interviewprep-939b4",
+  storageBucket: "interviewprep-939b4.firebasestorage.app",
+  messagingSenderId: "422920351116",
+  appId: "1:422920351116:web:2d85a05331e4fe50e13aa9",
+  measurementId: "G-9S38TGKLP5"
 };
+
+console.log("Firebase Api key : ", process.env.FIREBASE_API_KEY)
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
